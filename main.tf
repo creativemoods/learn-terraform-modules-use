@@ -32,7 +32,7 @@ module "vpc" {
 module "ec2_instances" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "6.4.0"
-  count   = 2
+  count   = 1
 
   name = "${var.student_id}-ec2-${count.index + 1}"
 
