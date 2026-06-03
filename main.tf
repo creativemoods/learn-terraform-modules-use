@@ -3,7 +3,7 @@
 
 provider "aws" {
   region = "eu-south-2" # Spain
-  access_key = "AK..."
+  access_key = "AK..." # Do not use, configure with aws configure and then delete access_key and secret_key
   secret_key = "..."
 
   default_tags {
@@ -37,7 +37,7 @@ module "ec2_instances" {
   name = "my-ec2-cluster"
 
   ami                    = "ami-0b31d93fb777b6ae6"
-  instance_type          = "t2.micro"
+  instance_type          = "t3.micro"
   vpc_security_group_ids = [module.vpc.default_security_group_id]
   subnet_id              = module.vpc.public_subnets[0]
 
