@@ -17,7 +17,7 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "6.6.1"
 
-  name = var.vpc_name
+  name = "${var.student_id}-${var.vpc_name}"
   cidr = var.vpc_cidr
 
   azs             = var.vpc_azs
@@ -34,9 +34,9 @@ module "ec2_instances" {
   version = "6.4.0"
   count   = 2
 
-  name = "my-ec2-cluster"
+  name = "${var.student_id}-ec2-${count.index + 1}"
 
-  ami                    = "ami-0b31d93fb777b6ae6"
+  ami                    = "ami-067d32d0b32246b65"
   instance_type          = "t3.micro"
   vpc_security_group_ids = [module.vpc.default_security_group_id]
   subnet_id              = module.vpc.public_subnets[0]

@@ -1,6 +1,10 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
+variable "student_id" {
+  type = string
+}
+
 variable "vpc_name" {
   description = "Name of VPC"
   type        = string
@@ -16,7 +20,7 @@ variable "vpc_cidr" {
 variable "vpc_azs" {
   description = "Availability zones for VPC"
   type        = list(string)
-  default     = ["eu-west-2a", "eu-west-2b", "eu-west-2c"]
+  default     = ["eu-south-2a", "eu-south-2b", "eu-south-2c"]
 }
 
 variable "vpc_private_subnets" {
