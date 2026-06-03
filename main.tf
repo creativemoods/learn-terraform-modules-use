@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MPL-2.0
 
 provider "aws" {
-  region = "eu-west-2" # London
+  region = "eu-south-2" # Spain
   access_key = "AK..."
   secret_key = "..."
 
@@ -15,7 +15,7 @@ provider "aws" {
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "3.18.1"
+  version = "6.6.1"
 
   name = var.vpc_name
   cidr = var.vpc_cidr
